@@ -4,13 +4,17 @@ import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -32,19 +36,28 @@ const Login = () => {
         return;
       }
 
-      // ✅ Store JWT
+      // ✅ Store auth data
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("role", data.user.role);
 
       alert("Login successful");
-      navigate("/home");
+
+      // ✅ Role-based navigation
+      if (data.user.role === "admin") {
+        navigate("/Home");
+      } else {
+        navigate("/Main");
+      }
 
     } catch (err) {
+      console.error(err);
       alert("Server error");
     }
-  };
+  };     
 
   return (
+    
     <div className="login-container">
       <div className="login-box">
         <h2>Login</h2>

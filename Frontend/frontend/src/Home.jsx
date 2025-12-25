@@ -5,9 +5,10 @@ import "./Carousel.css";
 import Projects from "./Admin/Projects";
 import Collaborations from "./Admin/Collaborations";
 import Tasks from "./Admin/Tasks";
-import Insights from "./Admin/Insights.jsx";
+import ProjectForm from "./ProjectForm";
+import Insights from "./Admin/Insights";
 import Settings from "./Settings";
-
+import { Link } from "react-router-dom";
 import img1 from "./assets/img1.jpg";
 import img2 from "./assets/img2.jpg";
 import img3 from "./assets/img3.jpg";
@@ -32,24 +33,13 @@ export default function Home() {
   return (
     <div className="home-container">
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="nav-logo">ColabSphere</div>
-        <ul className="nav-links">
-          <li><button onClick={() => navigate("/")}>Home</button></li>
-          <li><button onClick={() => navigate("/features")}>Features</button></li>
-          <li><button onClick={() => navigate("/about")}>About</button></li>
-          <li><button onClick={() => navigate("/contact")}>Contact</button></li>
-        </ul>
-      </nav>
-
       {/* HERO */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1>Welcome to ColabSphere</h1>
-          <p>Discover, Learn, and Collaborate</p>
-          <button className="cta-button" onClick={() => navigate("/features")}>
-            Explore All Features
+          <h1>🚀 Welcome to ColabSphere</h1>
+          <p>Discover, Learn, and Collaborate in Style!</p>
+          <button className="cta-button" onClick={() => navigate("/ProjectForm")}>
+            🌟 Explore All Features
           </button>
         </div>
 
@@ -60,47 +50,47 @@ export default function Home() {
 
       {/* FEATURES */}
       <section className="features-section">
-        <h2>Features</h2>
+        <h2>✨ Our Amazing Features</h2>
 
         <div className="features-grid">
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => navigate("/ProjectForm")}>
+            <div className="feature-icon">📋</div>
             <h3>Projects</h3>
-            <p>Submit ideas & collaborate</p>
-            <button onClick={() => navigate("/Projects")}>Explore</button>
+            <p>Submit ideas & collaborate seamlessly</p>
+            <button className="feature-btn">Explore Now 🚀</button>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => navigate("/admin/collaborations")}>
+            <div className="feature-icon">🤝</div>
             <h3>Collaborations</h3>
-            <p>Work with others</p>
-            <button onClick={() => navigate("/features")}>Explore</button>
+            <p>Work with others in real-time</p>
+            <button className="feature-btn">Join Now 👥</button>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => navigate("/admin/insights")}>
+            <div className="feature-icon">📊</div>
             <h3>Insights</h3>
-            <p>Analytics & usage</p>
-            <button onClick={() => navigate("/features")}>Explore</button>
+            <p>Analytics & usage insights</p>
+            <button className="feature-btn">View Stats 📈</button>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => navigate("/admin/settings")}>
+            <div className="feature-icon">⚙️</div>
             <h3>Settings</h3>
-            <p>Customize experience</p>
-            <button onClick={() => navigate("/features")}>Explore</button>
+            <p>Customize your experience</p>
+            <button className="feature-btn">Configure 🔧</button>
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="footer">
-        <p>© 2025 ColabSphere</p>
-      </footer>
 
       {/* MODAL */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>All Features</h2>
-            <button onClick={() => navigate("/projects")}>Projects</button>
-            <button onClick={() => navigate("/features")}>Collaborations</button>
+            <h2>🎉 All Features</h2>
+            <button onClick={() => navigate("/ProjectForm")}>📋 Projects</button>
+            <button onClick={() => navigate("/admin/collaborations")}>🤝 Collaborations</button>
+            <button onClick={() => setShowModal(false)}>❌ Close</button>
           </div>
         </div>
       )}
