@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom";
 import "./Usercss.css";
 import axios from "axios";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -68,7 +70,7 @@ const Projects = () => {
               🏆 Competitions: {project.competitions}
             </p>
 
-            <button className="join-btn">View / Join</button>
+            <button className="join-btn" onClick={() => navigate("/Projectview")}>View / Join</button>
           </div>
         ))}
       </div>

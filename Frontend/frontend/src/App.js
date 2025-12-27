@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
+import Projectview from "./Projectview";
 import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -32,6 +32,7 @@ function App() {
 
           {/* User */}
           <Route path="/home" element={<Home />} />
+          <Route path="/view" element={<Projectview />} />
           <Route path="/ProjectForm" element={<ProjectForm />} />
          <Route path="/main" element={<Main />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
