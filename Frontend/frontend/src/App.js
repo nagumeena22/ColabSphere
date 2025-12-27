@@ -15,6 +15,8 @@ import Collaborations from "./Admin/Collaborations";
 import Tasks from "./Admin/Tasks";
 import Insights from "./Admin/Insights.jsx";
 import Settings from "./Settings";
+import ProjectsList from "./ProjectsList";
+import JoinRequests from "./Admin/JoinRequests";
 import "./App.css";
 import Main from "./Main.jsx";
 function App() {
@@ -35,12 +37,14 @@ function App() {
           <Route path="/view" element={<Projectview />} />
           <Route path="/ProjectForm" element={<ProjectForm />} />
          <Route path="/main" element={<Main />} />
+          <Route path="/projects" element={<ProjectsList />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/users/projectuser" element={< Projectuser/>} />
           <Route path="/admin/projects" element={<Projects />} />
           <Route path="/admin/collaborations" element={<Collaborations />} />
           <Route path="/admin/tasks" element={<Tasks />} />
           <Route path="/admin/insights" element={<Insights />} />
+          <Route path="/admin/join-requests" element={<JoinRequests />} />
           <Route path="/admin/settings" element={<Settings />} />
 
           {/* Fallback */}

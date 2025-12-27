@@ -23,7 +23,7 @@ export default function ProjectForm() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/admin/add", // ✅ CORRECT URL
+        "http://localhost:5000/users/add", // ✅ CORRECT URL
         data,
         {
           headers: {

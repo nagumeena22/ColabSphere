@@ -101,6 +101,11 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 5
     },
+    // User settings and preferences
+    settings: {
+        type: mongoose.Schema.Types.Mixed,
+        default: {}
+    },
     createdAt: {
         type: Date,
         default: Date.now

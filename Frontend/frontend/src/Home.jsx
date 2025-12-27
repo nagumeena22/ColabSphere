@@ -38,7 +38,7 @@ export default function Home() {
         <div className="hero-content">
           <h1>🚀 Welcome to ColabSphere</h1>
           <p>Discover, Learn, and Collaborate in Style!</p>
-          <button className="cta-button" onClick={() => navigate("/ProjectForm")}>
+          <button className="cta-button" onClick={() => navigate("/projects")}>
             🌟 Explore All Features
           </button>
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
         <h2>✨ Our Amazing Features</h2>
 
         <div className="features-grid">
-          <div className="feature-card" onClick={() => navigate("/ProjectForm")}>
+          <div className="feature-card" onClick={() => navigate("/projects")}>
             <div className="feature-icon">📋</div>
             <h3>Projects</h3>
             <p>Submit ideas & collaborate seamlessly</p>
@@ -88,7 +88,7 @@ export default function Home() {
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>🎉 All Features</h2>
-            <button onClick={() => navigate("/ProjectForm")}>📋 Projects</button>
+            <button onClick={() => navigate("/projects")}>📋 Projects</button>
             <button onClick={() => navigate("/admin/collaborations")}>🤝 Collaborations</button>
             <button onClick={() => setShowModal(false)}>❌ Close</button>
           </div>

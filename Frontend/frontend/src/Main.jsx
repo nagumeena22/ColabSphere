@@ -70,7 +70,7 @@ const Projects = () => {
               🏆 Competitions: {project.competitions}
             </p>
 
-            <button className="join-btn" onClick={() => navigate("/Projectview")}>View / Join</button>
+            <button className="join-btn" onClick={() => navigate("/Projectview")}>JoinRequest / AcceptedProject</button>
           </div>
         ))}
       </div>

@@ -1,0 +1,195 @@
+.join-requests {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.join-requests h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.request-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.2s;
+}
+
+.request-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.user-info h3 {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.user-info p {
+  margin: 2px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.reg-no {
+  font-weight: bold;
+  color: #3498db;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #f39c12;
+  color: white;
+}
+
+.status-accepted {
+  background: #27ae60;
+  color: white;
+}
+
+.status-rejected {
+  background: #e74c3c;
+  color: white;
+}
+
+.project-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-info h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.project-info p {
+  margin: 5px 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+.project-info strong {
+  color: #2c3e50;
+}
+
+.request-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.timestamp {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.accept-btn, .reject-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.accept-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.accept-btn:hover:not(:disabled) {
+  background: #229954;
+  transform: translateY(-1px);
+}
+
+.reject-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.reject-btn:hover:not(:disabled) {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+.accept-btn:disabled, .reject-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading, .error, .no-requests {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.loading {
+  color: #3498db;
+}
+
+.no-requests {
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .request-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .request-footer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .join-requests h1 {
+    font-size: 2rem;
+  }
+}
